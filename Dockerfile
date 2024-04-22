@@ -1,10 +1,4 @@
----
-- hosts: dev
-  connection: ssh
-
-
-
-  tasks:
-    - name: installing git
-      action: yum name=maven state=absent
-
+FROM ubuntu
+RUN apt install apache2 -y
+COPY . /var/www/html/
+CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]
