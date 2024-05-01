@@ -1,0 +1,7 @@
+---
+- hosts: dev
+  connection: ssh
+  vars:
+  tasks:
+    - name: installing tree
+      action: yum name=tree state=present
